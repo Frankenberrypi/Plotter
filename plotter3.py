@@ -2,7 +2,6 @@
 
 import subprocess
 import re
-import sys
 import time
 import datetime
 
@@ -10,7 +9,6 @@ import matplotlib
 matplotlib.use('Agg')
 
 import matplotlib.pyplot as plt
-import numpy as np
 
 # Start some empty lists
 timeBase = []
