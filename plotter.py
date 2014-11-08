@@ -10,6 +10,8 @@ matplotlib.use('Agg')
 
 import matplotlib.pyplot as plt
 
+import csv
+
 # Start some empty lists
 timeBase = []
 timeL = []
@@ -18,7 +20,7 @@ humiL = []
 
 # Continuously append data
 while(True):
-  # Run the DHT program to get the humidity and temperature readings!
+  # Run the DHT program to get the humidity and temperature readings
 
   output = subprocess.check_output(["./Adafruit_DHT", "2302", "4"]);
   print output
@@ -38,6 +40,8 @@ while(True):
 
   print "Temperature: %.1f F" % temp
   print "Humidity:    %.1f %%" % humidity
+  
+
 
   # Stick it in some lists
   timeNow = datetime.datetime.now()
@@ -46,6 +50,12 @@ while(True):
   tempL.append(temp)
   humiL.append(humidity)
 
+
+  # Open a .csv file
+  with open('data.csv', 'wb') as dataFile:
+      dataWriter = csv.writer(dataFile, delimiter=' ',quotechar='|', quoting=csv.QUOTE_MINIMAL)
+      dataWriter.writerow(timeNow, temp, humidity)
+      
   # Temp plot
   plt.plot(timeL,tempL)
   plt.ylim([60,85])
