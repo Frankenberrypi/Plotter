@@ -50,11 +50,13 @@ while(True):
   tempL.append(temp)
   humiL.append(humidity)
 
-
-  # Open a .csv file
-  with open('data.csv', 'wb') as dataFile:
-      dataWriter = csv.writer(dataFile, delimiter=' ',quotechar='|', quoting=csv.QUOTE_MINIMAL)
-      dataWriter.writerow(timeNow, temp, humidity)
+#  # make a row
+#  dataRow = [timeNow, temp, humidity]
+#
+#  # Open a .csv file
+#  with open('data.csv', 'wb') as dataFile:
+#      dataWriter = csv.writer(dataFile, delimiter=' ',quotechar='|', quoting=csv.QUOTE_MINIMAL)
+#      dataWriter.writerow(timeNow, temp, humidity)
       
   # Temp plot
   plt.plot(timeL,tempL)
