@@ -10,7 +10,7 @@ matplotlib.use('Agg')
 
 import matplotlib.pyplot as plt
 
-import csv
+#import csv
 
 # Start some empty lists
 timeBase = []
