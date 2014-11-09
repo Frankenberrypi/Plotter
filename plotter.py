@@ -55,7 +55,7 @@ while(True):
 
   # Open a .csv file
   with open('data.csv', 'wb') as dataFile:
-      dataWriter = csv.writer(dataFile, delimiter=' ',quotechar='|', quoting=csv.QUOTE_MINIMAL)
+      dataWriter = csv.writer(dataFile, delimiter=',',quotechar='"', quoting=csv.QUOTE_MINIMAL)
       dataWriter.writerow(dataRow)
       
   # Temp plot
