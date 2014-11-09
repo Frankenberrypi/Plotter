@@ -54,7 +54,7 @@ while(True):
   dataRow = [timeNow, temp, humidity]
 
   # Open a .csv file
-  with open('data.csv', 'wb') as dataFile:
+  with open('data.csv', 'a') as dataFile:
       dataWriter = csv.writer(dataFile, delimiter=',',quotechar='"', quoting=csv.QUOTE_MINIMAL)
       dataWriter.writerow(dataRow)
       
